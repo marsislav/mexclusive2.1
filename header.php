@@ -1,36 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
-
-	<!-- title -->
-	<title>Fruitkha - Slider Version</title>
-
-	<!-- favicon -->
-	<link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
-	<!-- google font -->
-
-	<!-- fontawesome -->
-	<!--<link rel="stylesheet" href="assets/css/all.min.css">-->
-
-	<!-- owl carousel -->
-
-	<!-- magnific popup -->
-	
-	<!-- animate css -->
-	
-	<!-- mean menu css -->
-	
-	<!-- main style -->
-	
-	<!-- responsive -->
-	
-    <?php wp_head(); ?>
-
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="profile" href="https://gmpg.org/xfn/11"/>
+	<?php wp_head(); ?>
 </head>
+    
 <body>
 	
 	<!--PreLoader-->

@@ -2,17 +2,17 @@
 /**
  * Theme customizer
  *
- * @package mexclusive2
+ * @package mexclusive21
  */
 
-function mexclusive2_customizer($wp_customize) {
+function mexclusive21_customizer($wp_customize) {
 
 	// Slider section
 	$wp_customize->add_section(
 		'sec_slider',
 		array(
-			'title'       => __('Slider Settings', 'mexclusive2'),
-			'description' => __('Home page slider settings', 'mexclusive2'),
+			'title'       => __('Slider Settings', 'mexclusive21'),
+			'description' => __('Home page slider settings', 'mexclusive21'),
 		)
 	);
 
@@ -31,8 +31,8 @@ function mexclusive2_customizer($wp_customize) {
 		$wp_customize->add_control(
 			'set_slider_page' . $i,
 			array(
-				'label'       => __('Set slider page', 'mexclusive2') . ' ' . $i,
-				'description' => __('Select page for slider', 'mexclusive2') . ' ' . $i,
+				'label'       => __('Set slider page', 'mexclusive21') . ' ' . $i,
+				'description' => __('Select page for slider', 'mexclusive21') . ' ' . $i,
 				'section'     => 'sec_slider',
 				'type'        => 'dropdown-pages',
 			)
@@ -51,8 +51,8 @@ function mexclusive2_customizer($wp_customize) {
 		$wp_customize->add_control(
 			'set_slider_button_text' . $i,
 			array(
-				'label'       => __('Button text for slider page', 'mexclusive2') . ' ' . $i,
-				'description' => __('Enter button text for slider page', 'mexclusive2') . ' ' . $i,
+				'label'       => __('Button text for slider page', 'mexclusive21') . ' ' . $i,
+				'description' => __('Enter button text for slider page', 'mexclusive21') . ' ' . $i,
 				'section'     => 'sec_slider',
 				'type'        => 'text',
 			)
@@ -71,8 +71,8 @@ function mexclusive2_customizer($wp_customize) {
 		$wp_customize->add_control(
 			'set_slider_url' . $i,
 			array(
-				'label'       => __('URL for slider page', 'mexclusive2') . ' ' . $i,
-				'description' => __('Enter URL for button on slider page', 'mexclusive2') . ' ' . $i,
+				'label'       => __('URL for slider page', 'mexclusive21') . ' ' . $i,
+				'description' => __('Enter URL for button on slider page', 'mexclusive21') . ' ' . $i,
 				'section'     => 'sec_slider',
 				'type'        => 'url',
 			)
@@ -83,10 +83,47 @@ function mexclusive2_customizer($wp_customize) {
 	$wp_customize->add_section(
 		'sec_home_page',
 		array(
-			'title'       => __('Home page products and blog settings', 'mexclusive2'),
-			'description' => __('Settings for homepage and blog', 'mexclusive2'),
+			'title'       => __('Home page products and blog settings', 'mexclusive21'),
+			'description' => __('Settings for homepage and blog', 'mexclusive21'),
 		)
 	);
+
+	//Description for Our product section in home page
+
+	$wp_customize->add_setting(
+		'set_shop_descripton',
+
+		array(
+			'type'              => 'theme_mod',
+			'default'           => '',
+			'sanitize_callback' => 'wp_kses_post',
+		)
+	);
+
+	$wp_customize->add_control(
+		'set_shop_descripton',
+		array(
+			'label'       => __('Shop description', 'mexclusive21'),
+			'description' => __('Enter your description for products in home-page', 'mexclusive21'),
+			'section'     => 'sec_home_page',
+			'type'        => 'text',
+		)
+	);
+
+	//end description for Our product section in home page
+
+
+	
+	$wp_customize->add_control(
+		'set_slider_button_text' . $i,
+		array(
+			'label'       => __('Button text for slider page', 'mexclusive21') . ' ' . $i,
+			'description' => __('Enter button text for slider page', 'mexclusive21') . ' ' . $i,
+			'section'     => 'sec_slider',
+			'type'        => 'text',
+		)
+	);
+
 
 	// Popular products max number
 	$wp_customize->add_setting(
@@ -101,8 +138,8 @@ function mexclusive2_customizer($wp_customize) {
 	$wp_customize->add_control(
 		'set_popular_max_num',
 		array(
-			'label'       => __('Popular products max number', 'mexclusive2'),
-			'description' => __('Set maximum number of popular products', 'mexclusive2'),
+			'label'       => __('Popular products max number', 'mexclusive21'),
+			'description' => __('Set maximum number of popular products', 'mexclusive21'),
 			'section'     => 'sec_home_page',
 			'type'        => 'number',
 		)
@@ -121,8 +158,8 @@ function mexclusive2_customizer($wp_customize) {
 	$wp_customize->add_control(
 		'set_popular_max_col',
 		array(
-			'label'       => __('Popular products max columns', 'mexclusive2'),
-			'description' => __('Set maximum columns of popular products', 'mexclusive2'),
+			'label'       => __('Popular products max columns', 'mexclusive21'),
+			'description' => __('Set maximum columns of popular products', 'mexclusive21'),
 			'section'     => 'sec_home_page',
 			'type'        => 'number',
 		)
@@ -141,8 +178,8 @@ function mexclusive2_customizer($wp_customize) {
 	$wp_customize->add_control(
 		'set_new_arrivals_max_num',
 		array(
-			'label'       => __('New products max number', 'mexclusive2'),
-			'description' => __('Set maximum number of new products', 'mexclusive2'),
+			'label'       => __('New products max number', 'mexclusive21'),
+			'description' => __('Set maximum number of new products', 'mexclusive21'),
 			'section'     => 'sec_home_page',
 			'type'        => 'number',
 		)
@@ -161,8 +198,8 @@ function mexclusive2_customizer($wp_customize) {
 	$wp_customize->add_control(
 		'set_new_arrivals_max_col',
 		array(
-			'label'       => __('New products max columns', 'mexclusive2'),
-			'description' => __('Set maximum columns of new products', 'mexclusive2'),
+			'label'       => __('New products max columns', 'mexclusive21'),
+			'description' => __('Set maximum columns of new products', 'mexclusive21'),
 			'section'     => 'sec_home_page',
 			'type'        => 'number',
 		)
@@ -174,14 +211,14 @@ function mexclusive2_customizer($wp_customize) {
 		array(
 			'type'              => 'theme_mod',
 			'default'           => '',
-			'sanitize_callback' => 'mexclusive2_sanitize_checkbox',
+			'sanitize_callback' => 'mexclusive21_sanitize_checkbox',
 		)
 	);
 
 	$wp_customize->add_control(
 		'set_deal_show',
 		array(
-			'label'   => __('Show deal of the week?', 'mexclusive2'),
+			'label'   => __('Show deal of the week?', 'mexclusive21'),
 			'section' => 'sec_home_page',
 			'type'    => 'checkbox',
 		)
@@ -200,8 +237,8 @@ function mexclusive2_customizer($wp_customize) {
 	$wp_customize->add_control(
 		'set_deal',
 		array(
-			'label'       => __('Deal of the week product ID', 'mexclusive2'),
-			'description' => __('Set product ID for the deal of the week', 'mexclusive2'),
+			'label'       => __('Deal of the week product ID', 'mexclusive21'),
+			'description' => __('Set product ID for the deal of the week', 'mexclusive21'),
 			'section'     => 'sec_home_page',
 			'type'        => 'number',
 		)
@@ -209,10 +246,10 @@ function mexclusive2_customizer($wp_customize) {
 
 	// Footer settings
 	$wp_customize->add_section(
-		'mexclusive2_footer_options',
+		'mexclusive21_footer_options',
 		array(
-			'title'       => __('Footer Options', 'mexclusive2'),
-			'description' => __('You can change footer options from here.', 'mexclusive2'),
+			'title'       => __('Footer Options', 'mexclusive21'),
+			'description' => __('You can change footer options from here.', 'mexclusive21'),
 		)
 	);
 
@@ -230,9 +267,9 @@ function mexclusive2_customizer($wp_customize) {
 	$wp_customize->add_control(
 		'set_copyright',
 		array(
-			'label'       => __('Copyright info', 'mexclusive2'),
-			'description' => __('Enter your copyright information here', 'mexclusive2'),
-			'section'     => 'mexclusive2_footer_options',
+			'label'       => __('Copyright info', 'mexclusive21'),
+			'description' => __('Enter your copyright information here', 'mexclusive21'),
+			'section'     => 'mexclusive21_footer_options',
 			'type'        => 'text',
 		)
 	);
@@ -251,8 +288,8 @@ function mexclusive2_customizer($wp_customize) {
 			$wp_customize,
 			'footer_background_color',
 			array(
-				'label'    => __('Footer Background Color', 'mexclusive2'),
-				'section'  => 'mexclusive2_footer_options',
+				'label'    => __('Footer Background Color', 'mexclusive21'),
+				'section'  => 'mexclusive21_footer_options',
 				'settings' => 'footer_background_color',
 			)
 		)
@@ -272,8 +309,8 @@ function mexclusive2_customizer($wp_customize) {
 			$wp_customize,
 			'footer_text_color',
 			array(
-				'label'    => __('Footer Text Color', 'mexclusive2'),
-				'section'  => 'mexclusive2_footer_options',
+				'label'    => __('Footer Text Color', 'mexclusive21'),
+				'section'  => 'mexclusive21_footer_options',
 				'settings' => 'footer_text_color',
 			)
 		)
@@ -293,8 +330,8 @@ function mexclusive2_customizer($wp_customize) {
 			$wp_customize,
 			'footer_link_color',
 			array(
-				'label'    => __('Footer Link Color', 'mexclusive2'),
-				'section'  => 'mexclusive2_footer_options',
+				'label'    => __('Footer Link Color', 'mexclusive21'),
+				'section'  => 'mexclusive21_footer_options',
 				'settings' => 'footer_link_color',
 			)
 		)
@@ -302,21 +339,21 @@ function mexclusive2_customizer($wp_customize) {
 
 	// Footer layout
 	$wp_customize->add_setting(
-		'mexclusive2_footer_layout',
+		'mexclusive21_footer_layout',
 		array(
 			'default'           => '3,3,3,3',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_text_field',
-			'validate_callback' => 'mexclusive2_validate_footer_layout',
+			'validate_callback' => 'mexclusive21_validate_footer_layout',
 		)
 	);
 
 	$wp_customize->add_control(
-		'mexclusive2_footer_layout',
+		'mexclusive21_footer_layout',
 		array(
 			'type'     => 'text',
-			'label'    => __('Footer Layout', 'mexclusive2'),
-			'section'  => 'mexclusive2_footer_options',
+			'label'    => __('Footer Layout', 'mexclusive21'),
+			'section'  => 'mexclusive21_footer_options',
 		)
 	);
 
@@ -326,39 +363,39 @@ function mexclusive2_customizer($wp_customize) {
 		array(
 			'type'              => 'theme_mod',
 			'default'           => '',
-			'sanitize_callback' => 'mexclusive2_sanitize_checkbox',
+			'sanitize_callback' => 'mexclusive21_sanitize_checkbox',
 		)
 	);
 
 	$wp_customize->add_control(
 		'set_footer_menu_show',
 		array(
-			'label'   => __('Show footer menu?', 'mexclusive2'),
-			'section' => 'mexclusive2_footer_options',
+			'label'   => __('Show footer menu?', 'mexclusive21'),
+			'section' => 'mexclusive21_footer_options',
 			'type'    => 'checkbox',
 		)
 	);
 }
 
-add_action('customize_register', 'mexclusive2_customizer');
+add_action('customize_register', 'mexclusive21_customizer');
 
-function mexclusive2_validate_footer_layout($validity, $value) {
+function mexclusive21_validate_footer_layout($validity, $value) {
 	if (!preg_match('/^([1-9]|1[012])(,([1-9]|1[012]))*$/', $value)) {
-		$validity->add('invalid_footer_layout', esc_html__('Footer layout is invalid', 'mexclusive2'));
+		$validity->add('invalid_footer_layout', esc_html__('Footer layout is invalid', 'mexclusive21'));
 	}
 	return $validity;
 }
 
-function mexclusive2_sanitize_checkbox($checked) {
+function mexclusive21_sanitize_checkbox($checked) {
 	return ((isset($checked) && true == $checked) ? true : false);
 }
 
-function mexclusive2_customize_register($wp_customize) {
+function mexclusive21_customize_register($wp_customize) {
 	// Add section for background settings
 	$wp_customize->add_section(
 		'background_settings',
 		array(
-			'title'    => __('Background Settings', 'mexclusive2'),
+			'title'    => __('Background Settings', 'mexclusive21'),
 			'priority' => 30,
 		)
 	);
@@ -378,7 +415,7 @@ function mexclusive2_customize_register($wp_customize) {
 			$wp_customize,
 			'background_gradient_start_color',
 			array(
-				'label'    => __('Gradient Start Color', 'mexclusive2'),
+				'label'    => __('Gradient Start Color', 'mexclusive21'),
 				'section'  => 'background_settings',
 			)
 		)
@@ -399,16 +436,16 @@ function mexclusive2_customize_register($wp_customize) {
 			$wp_customize,
 			'background_gradient_end_color',
 			array(
-				'label'    => __('Gradient End Color', 'mexclusive2'),
+				'label'    => __('Gradient End Color', 'mexclusive21'),
 				'section'  => 'background_settings',
 			)
 		)
 	);
 }
 
-add_action('customize_register', 'mexclusive2_customize_register');
+add_action('customize_register', 'mexclusive21_customize_register');
 
-function mexclusive2_customizer_styles() {
+function mexclusive21_customizer_styles() {
 	$start_color = get_theme_mod('background_gradient_start_color', '#1b7dff');
 	$end_color   = get_theme_mod('background_gradient_end_color', 'rgba(255, 255, 255, 0)'); // Set the default end color to transparent
 	?>
@@ -420,4 +457,48 @@ function mexclusive2_customizer_styles() {
 	<?php
 }
 
-add_action('wp_head', 'mexclusive2_customizer_styles');
+add_action('wp_head', 'mexclusive21_customizer_styles');
+
+function mexclusive21_customizer_settings($wp_customize) {
+    $wp_customize->add_section('social_networks_section', array(
+        'title' => __('Social Networks & Contacts', 'mexcusive2.1'),
+        'priority' => 30,
+    ));
+
+    // Facebook
+    $wp_customize->add_setting('facebook_url', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control('facebook_url', array(
+        'label' => __('Facebook URL', 'theme'),
+        'section' => 'social_networks_section',
+        'type' => 'text',
+    ));
+
+    // Twitter
+    $wp_customize->add_setting('twitter_url', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control('twitter_url', array(
+        'label' => __('Twitter URL', 'theme'),
+        'section' => 'social_networks_section',
+        'type' => 'text',
+    ));
+
+    // Instagram
+    $wp_customize->add_setting('instagram_url', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control('instagram_url', array(
+        'label' => __('Instagram URL', 'theme'),
+        'section' => 'social_networks_section',
+        'type' => 'text',
+    ));
+}
+add_action('customize_register', 'mexclusive21_customizer_settings');
