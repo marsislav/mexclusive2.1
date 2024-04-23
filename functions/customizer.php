@@ -114,6 +114,8 @@ function mexclusive21_customizer($wp_customize) {
 
 
 	
+
+	
 	$wp_customize->add_control(
 		'set_slider_button_text' . $i,
 		array(
