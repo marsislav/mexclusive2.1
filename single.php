@@ -119,7 +119,8 @@
 				<div class="col-lg-8">
 					<div class="single-article-section">
 						<div class="single-article-text">
-							<div class="single-artcile-bg"></div>
+							<img src="<?php the_post_thumbnail_url(); ?>" alt="<?php echo the_title();?>">
+					
 							<p class="blog-meta">
 								<span class="author"><i class="fas fa-user"></i> Admin</span>
 								<span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>

@@ -1,5 +1,10 @@
 
 	<!-- footer -->
+
+	<section>
+		<?php get_template_part('template-parts/footer/widgets'); ?>
+    </section>
+	<!--
 	<div class="footer-area">
 		<div class="container">
 			<div class="row">
@@ -44,7 +49,7 @@
 			</div>
 		</div>
 	</div>
-	
+-->
 	<!-- end footer -->
 	
 	<!-- copyright -->
@@ -52,7 +57,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
-					<p>Copyrights &copy; 2024 - <a href="#">,  All Rights Reserved.<br>
+					<p>Copyrights &copy; 2024 - <a href="#">TEST</a>,  All Rights Reserved.<br>
 						Distributed By - <a href="#">Miro</a>
 					</p>
 				</div>
