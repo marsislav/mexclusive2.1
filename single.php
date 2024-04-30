@@ -128,38 +128,33 @@
 							<?php the_content(); ?>
 						</div>
 
-						<div class="comments-list-wrap">
-							<h3 class="comment-count-title">3 Comments</h3>
-							<div class="comment-list">
-								<div class="single-comment-body">
-									<div class="comment-user-avater">
-										<img src="assets/img/avaters/avatar1.png" alt="">
-									</div>
-									<div class="comment-text-body">
-										<h4>Jenny Joe <span class="comment-date">Aprl 26, 2020</span> <a href="#">reply</a></h4>
-										<p>Nunc risus ex, tempus quis purus ac, tempor consequat ex. Vivamus sem magna, maximus at est id, maximus aliquet nunc. Suspendisse lacinia velit a eros porttitor, in interdum ante faucibus Suspendisse lacinia velit a eros porttitor, in interdum ante faucibus.</p>
-									</div>
-									<div class="single-comment-body child">
-										<div class="comment-user-avater">
-											<img src="assets/img/avaters/avatar3.png" alt="">
-										</div>
-										<div class="comment-text-body">
-											<h4>Simon Soe <span class="comment-date">Aprl 27, 2020</span> <a href="#">reply</a></h4>
-											<p>Nunc risus ex, tempus quis purus ac, tempor consequat ex. Vivamus sem magna, maximus at est id, maximus aliquet nunc. Suspendisse lacinia velit a eros porttitor, in interdum ante faucibus.</p>
-										</div>
-									</div>
-								</div>
-								<div class="single-comment-body">
-									<div class="comment-user-avater">
-										<img src="assets/img/avaters/avatar2.png" alt="">
-									</div>
-									<div class="comment-text-body">
-										<h4>Addy Aoe <span class="comment-date">May 12, 2020</span> <a href="#">reply</a></h4>
-										<p>Nunc risus ex, tempus quis purus ac, tempor consequat ex. Vivamus sem magna, maximus at est id, maximus aliquet nunc. Suspendisse lacinia velit a eros porttitor, in interdum ante faucibus Suspendisse lacinia velit a eros porttitor, in interdum ante faucibus.</p>
-									</div>
-								</div>
-							</div>
-						</div>
+						<?php
+// Get comments
+$comments = get_comments(array(
+    'status' => 'approve',
+    'post_id' => get_the_ID(), // Assuming this is inside the loop
+));
+
+$comment_count = count($comments);
+?>
+
+<div class="comments-list-wrap">
+    <h3 class="comment-count-title"><?php echo $comment_count . ' ' . _n('Comment', 'Comments', $comment_count); ?></h3>
+    <div class="comment-list">
+        <?php foreach ($comments as $comment) : ?>
+            <div class="single-comment-body">
+                <div class="comment-user-avater">
+                    <?php echo get_avatar($comment, 64); ?>
+                </div>
+                <div class="comment-text-body">
+                    <h4><?php echo $comment->comment_author; ?> <span class="comment-date"><?php echo get_comment_date('F j, Y', $comment->comment_ID); ?></span> <a href="#respond">reply</a></h4>
+                    <p><?php echo $comment->comment_content; ?></p>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>
+
 
 						<div class="comment-template">
 							<h4>Leave a comment</h4>
