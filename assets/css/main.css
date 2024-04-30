@@ -1501,18 +1501,6 @@ input[type="submit"] {
   border-radius: 3px;
 }
 
-.homepage-bg-1 {
-  background-image: url(../img/hero-bg.jpg);
-}
-
-.homepage-bg-2 {
-  background-image: url(../img/hero-bg-2.jpg);
-}
-
-.homepage-bg-3 {
-  background-image: url(../img/hero-bg-3.jpg);
-}
-
 .homepage-slider {
   height: 100%;
 }
@@ -1948,7 +1936,6 @@ span.comment-date {
   height: 110px;
   border-radius: 50%;
   border: 1px solid #fff;
-  background-color: rgba(242, 129, 35, 0.75);
 }
 
 .cart-banner .image-column .price-box .inner-price {

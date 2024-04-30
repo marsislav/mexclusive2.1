@@ -1,4 +1,3 @@
-<h1>fw2</h1>
 <?php
 $footer_layout = sanitize_text_field(get_theme_mod('mexclusive21_footer_layout', '3,3,3,3'));
 $footer_layout = preg_replace('/\s+/', '', $footer_layout);

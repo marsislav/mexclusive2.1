@@ -12,59 +12,90 @@ get_header(); ?>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 col-lg-7 offset-lg-1 offset-xl-0">
-						<div class="hero-text">
-							<div class="hero-text-tablecell">
-								<p class="subtitle">Fresh & Organic</p>
-								<h1>Delicious Seasonal Fruits</h1>
-								<div class="hero-btns">
-									<a href="shop.html" class="boxed-btn">Fruit Collection</a>
-									<a href="contact.html" class="bordered-btn">Contact Us</a>
-								</div>
-							</div>
-						</div>
+					<?php
+						// Loop through each slider page
+						for ( $i = 1; $i <= 3; $i ++ ) {
+							// Get slider page settings
+							$page_id     = get_theme_mod( 'set_slider_page' . $i );
+							$button_text = get_theme_mod( 'set_slider_button_text' . $i );
+							$button_url  = get_theme_mod( 'set_slider_url' . $i );
+
+							// Output carousel item
+							$active_class = $i === 1 ? 'active' : ''; // Add 'active' class to the first item
+							?>
+                            <div class="carousel-item <?php echo $active_class; ?>">
+								<?php if ( $page_id ) : ?>
+
+									<?php echo get_the_post_thumbnail( $page_id, 'large', array(
+										'class' => 'single-homepage-slider',
+										'alt'   => get_the_title( $page_id )
+									) ); ?>
+
+									<?php if ( $button_text && $button_url ) : ?>
+                                        <div class="carousel-caption">
+                                            <h5><?php echo esc_html( get_the_title( $page_id ) ); ?></h5>
+                                            <p><?php echo esc_html( get_the_excerpt( $page_id ) ); ?></p>
+                                            <a href="<?php echo esc_url( $button_url ); ?>"
+                                               class="btn btn-primary"><?php echo esc_html( $button_text ); ?></a>
+                                        </div>
+									<?php endif; ?>
+								<?php endif; ?>
+                            </div>
+						<?php } ?>
 					</div>
 				</div>
 			</div>
 		</div>
 		<!-- single home slider -->
-		<div class="single-homepage-slider homepage-bg-2">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-10 offset-lg-1 text-center">
-						<div class="hero-text">
-							<div class="hero-text-tablecell">
-								<p class="subtitle">Fresh Everyday</p>
-								<h1>100% Organic Collection</h1>
-								<div class="hero-btns">
-									<a href="shop.html" class="boxed-btn">Visit Shop</a>
-									<a href="contact.html" class="bordered-btn">Contact Us</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- single home slider -->
-		<div class="single-homepage-slider homepage-bg-3">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-10 offset-lg-1 text-right">
-						<div class="hero-text">
-							<div class="hero-text-tablecell">
-								<p class="subtitle">Mega Sale Going On!</p>
-								<h1>Get December Discount</h1>
-								<div class="hero-btns">
-									<a href="shop.html" class="boxed-btn">Visit Shop</a>
-									<a href="contact.html" class="bordered-btn">Contact Us</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		<section class="slider">
+
+                <div id="mainSlider" class="carousel slide mb-5" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+						<?php
+						// Loop through each slider page
+						for ( $i = 1; $i <= 3; $i ++ ) {
+							// Get slider page settings
+							$page_id     = get_theme_mod( 'set_slider_page' . $i );
+							$button_text = get_theme_mod( 'set_slider_button_text' . $i );
+							$button_url  = get_theme_mod( 'set_slider_url' . $i );
+
+							// Output carousel item
+							$active_class = $i === 1 ? 'active' : ''; // Add 'active' class to the first item
+							?>
+                            <div class="carousel-item <?php echo $active_class; ?>">
+								<?php if ( $page_id ) : ?>
+
+									<?php echo get_the_post_thumbnail( $page_id, 'large', array(
+										'class' => 'single-homepage-slider',
+										'alt'   => get_the_title( $page_id )
+									) ); ?>
+
+									<?php if ( $button_text && $button_url ) : ?>
+                                        <div class="carousel-caption">
+                                            <h5><?php echo esc_html( get_the_title( $page_id ) ); ?></h5>
+                                            <p><?php echo esc_html( get_the_excerpt( $page_id ) ); ?></p>
+                                            <a href="<?php echo esc_url( $button_url ); ?>"
+                                               class="btn btn-primary"><?php echo esc_html( $button_text ); ?></a>
+                                        </div>
+									<?php endif; ?>
+								<?php endif; ?>
+                            </div>
+						<?php } ?>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#mainSlider"
+                            data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden"><?php _e( 'Previous', 'mexclusive21' ); ?></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#mainSlider"
+                            data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden"><?php _e( 'Next', 'mexclusive21' ); ?></span>
+                    </button>
+                </div>
+            </section>
 	</div>
+</div>
 	<!-- end home page slider -->
 	<!-- features list section -->
 	<div class="list-section pt-80 pb-80">
@@ -179,7 +210,9 @@ get_header(); ?>
             <div class="image-column col-lg-6">
                 <div class="image">
                     <div class="price-box">
-                        <div class="inner-price">
+                      
+                        <div class="inner-price bg-primary">
+                        
                             <span class="price">
                                 <strong><?php echo '- ' . $discount_percentage . '%'; ?></strong> <br> <?php _e( 'now!', 'mexclusive2.1' ); ?> 
                             </span>
@@ -202,7 +235,7 @@ get_header(); ?>
                         <div class="counter-column"><div class="inner"><span class="count">00</span>Secs</div></div>
                     </div>
                 </div>
-                <a href="cart.html" class="cart-btn mt-3"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                <a href="cart.html" class="cart-btn mt-3 bg-primary"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
             </div>
         </div>
     </div>
@@ -312,7 +345,7 @@ wp_reset_postdata();
         </div>
         <div class="row">
             <div class="col-lg-12 text-center">
-                <a href="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ); ?>" class="boxed-btn"><?php _e('View More', 'mexclusive21');?></a>
+                <a href="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ); ?>" class="boxed-btn bg-primary"><?php _e('View More', 'mexclusive21');?></a>
             </div>
         </div>
     </div>
@@ -341,6 +374,7 @@ wp_reset_postdata();
                                 if (has_post_thumbnail()) {
                                     the_post_thumbnail('thumbnail');
                                 }
+                                the_title();
                                 ?>
                             </div>
                     <?php
