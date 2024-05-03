@@ -1,9 +1,9 @@
 <?php
-function mexclusive2_config() {
+function mexclusive21_config() {
 register_nav_menus(
 array(
-'main_menu'   => __( 'Main Menu', 'mexclusive2' ),
-'footer_menu' => __( 'Footer Menu', 'mexclusive2' ),
+'main_menu'   => __( 'Main Menu', 'mexclusive21' ),
+'footer_menu' => __( 'Footer Menu', 'mexclusive21' ),
 )
 );
 
@@ -36,4 +36,4 @@ $content_width = 600;
 }
 }
 
-add_action( 'after_setup_theme', 'mexclusive2_config', 0 );
+add_action( 'after_setup_theme', 'mexclusive21_config', 0 );

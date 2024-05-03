@@ -332,6 +332,13 @@ wp_reset_postdata();
                                 <p class="blog-meta">
                                     <span class="author"><i class="fas fa-user"></i> <?php the_author(); ?></span>
                                     <span class="date"><i class="fas fa-calendar"></i> <?php echo get_the_date(); ?></span>
+                                    <span class="reading-time"><i class="fa fa-clock"></i> <?php display_reading_time();?></span>
+                                    <i class="fa fa-eye"></i> 
+                    <?php
+                        $views = mexclusive2_display_post_views();
+                        printf(
+                            $views );
+                    ?>
                                 </p>
                                 <p class="excerpt"><?php echo get_the_excerpt(); ?></p>
                                 <a href="<?php the_permalink(); ?>" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
@@ -368,6 +375,7 @@ wp_reset_postdata();
                     if ($query->have_posts()) :
                         while ($query->have_posts()) : $query->the_post();
                     ?>
+                    <a href="<?php the_permalink(); ?>">
                             <div class="single-logo-item">
                                 <?php
                                 // Check if the post has a featured image
@@ -377,6 +385,7 @@ wp_reset_postdata();
                                 the_title();
                                 ?>
                             </div>
+                            </a>
                     <?php
                         endwhile;
                         wp_reset_postdata();

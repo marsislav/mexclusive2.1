@@ -22,12 +22,12 @@ function display_reading_time() {
 	if ($reading_time < 1) {
 
 
-        _e("~ >1 minute", 'mexclusive2');
+        _e("~ >1 min", 'mexclusive21');
 
 
 	} elseif ($reading_time === 1) {
-		_e("~ 1 minute", 'mexclusive2');
+		_e("~ 1 min", 'mexclusive21');
 	} else {
-		printf(__("~ %d ?>minutes", 'mexclusive2'), $reading_time);
+		printf(__("~ %d mints", 'mexclusive21'), $reading_time);
 	}
 }

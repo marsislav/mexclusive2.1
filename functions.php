@@ -134,3 +134,25 @@ function custom_headings_color_styles() {
 }
 
 add_action('wp_head', 'custom_headings_color_styles');
+
+/////////////////TEST
+
+
+
+// Custom function to limit product short description to a certain number of words
+function custom_limit_product_short_description($excerpt, $limit) {
+    $excerpt = wp_strip_all_tags($excerpt); // Remove any HTML tags
+    $words = explode(' ', $excerpt);
+    if (count($words) > $limit) {
+        $excerpt = implode(' ', array_slice($words, 0, $limit));
+        $excerpt .= '...'; // Add an ellipsis to indicate truncation
+    }
+    return $excerpt;
+}
+
+// Filter the product short description
+function custom_filter_product_short_description($excerpt) {
+    // Change 10 to the desired word limit
+    return custom_limit_product_short_description($excerpt, 3);
+}
+add_filter('woocommerce_short_description', 'custom_filter_product_short_description', 3, 1);

@@ -9,74 +9,6 @@
     </div>
     <!--PreLoader Ends-->
 	
-	<!-- header -->
-	<div class="top-header-area" id="sticker">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12 col-sm-12 text-center">
-					<div class="main-menu-wrap">
-						<!-- logo -->
-						<div class="site-logo">
-							<a href="index.html">
-								<img src="assets/img/logo.png" alt="">
-							</a>
-						</div>
-						<!-- logo -->
-
-						<!-- menu start -->
-						<nav class="main-menu">
-							<ul>
-								<li class="current-list-item"><a href="#">Home</a>
-									<ul class="sub-menu">
-										<li><a href="index.html">Static Home</a></li>
-										<li><a href="index_2.html">Slider Home</a></li>
-									</ul>
-								</li>
-								<li><a href="about.html">About</a></li>
-								<li><a href="#">Pages</a>
-									<ul class="sub-menu">
-										<li><a href="404.html">404 page</a></li>
-										<li><a href="about.html">About</a></li>
-										<li><a href="cart.html">Cart</a></li>
-										<li><a href="checkout.html">Check Out</a></li>
-										<li><a href="contact.html">Contact</a></li>
-										<li><a href="news.html">News</a></li>
-										<li><a href="shop.html">Shop</a></li>
-									</ul>
-								</li>
-								<li><a href="news.html">News</a>
-									<ul class="sub-menu">
-										<li><a href="news.html">News</a></li>
-										<li><a href="single-news.html">Single News</a></li>
-									</ul>
-								</li>
-								<li><a href="contact.html">Contact</a></li>
-								<li><a href="shop.html">Shop</a>
-									<ul class="sub-menu">
-										<li><a href="shop.html">Shop</a></li>
-										<li><a href="checkout.html">Check Out</a></li>
-										<li><a href="single-product.html">Single Product</a></li>
-										<li><a href="cart.html">Cart</a></li>
-									</ul>
-								</li>
-								<li>
-									<div class="header-icons">
-										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
-										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-									</div>
-								</li>
-							</ul>
-						</nav>
-						<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-						<div class="mobile-menu"></div>
-						<!-- menu end -->
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end header -->
-
 	<!-- search area -->
 	<div class="search-area">
 		<div class="container">
@@ -127,47 +59,10 @@
 							</p>
 							<?php the_content(); ?>
 						</div>
-
-						<?php
-// Get comments
-$comments = get_comments(array(
-    'status' => 'approve',
-    'post_id' => get_the_ID(), // Assuming this is inside the loop
-));
-
-$comment_count = count($comments);
-?>
-
-<div class="comments-list-wrap">
-    <h3 class="comment-count-title"><?php echo $comment_count . ' ' . _n('Comment', 'Comments', $comment_count); ?></h3>
-    <div class="comment-list">
-        <?php foreach ($comments as $comment) : ?>
-            <div class="single-comment-body">
-                <div class="comment-user-avater">
-                    <?php echo get_avatar($comment, 64); ?>
-                </div>
-                <div class="comment-text-body">
-                    <h4><?php echo $comment->comment_author; ?> <span class="comment-date"><?php echo get_comment_date('F j, Y', $comment->comment_ID); ?></span> <a href="#respond">reply</a></h4>
-                    <p><?php echo $comment->comment_content; ?></p>
-                </div>
-            </div>
-        <?php endforeach; ?>
-    </div>
-</div>
+						<?php if (comments_open()) {comments_template();}?>
 
 
-						<div class="comment-template">
-							<h4>Leave a comment</h4>
-							<p>If you have a comment dont feel hesitate to send us your opinion.</p>
-							<form action="index.html">
-								<p>
-									<input type="text" placeholder="Your Name">
-									<input type="email" placeholder="Your Email">
-								</p>
-								<p><textarea name="comment" id="comment" cols="30" rows="10" placeholder="Your Message"></textarea></p>
-								<p><input type="submit" value="Submit"></p>
-							</form>
-						</div>
+						
 					</div>
 				</div>
 				<div class="col-lg-4">
