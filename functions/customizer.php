@@ -502,5 +502,67 @@ function mexclusive21_customizer_settings($wp_customize) {
         'section' => 'social_networks_section',
         'type' => 'text',
     ));
+
+	// LinkedIn
+    $wp_customize->add_setting('linkedin_url', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control('linkedin_url', array(
+        'label' => __('LinkedIn URL', 'theme'),
+        'section' => 'social_networks_section',
+        'type' => 'text',
+    ));
+
+	
+	// Dribble
+    $wp_customize->add_setting('dribble_url', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control('dribble_url', array(
+        'label' => __('Dribble URL', 'theme'),
+        'section' => 'social_networks_section',
+        'type' => 'text',
+    ));
+	
+	// Twitter
+    $wp_customize->add_setting('twitter_url', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control('twitter_url', array(
+        'label' => __('X (Twitter) URL', 'theme'),
+        'section' => 'social_networks_section',
+        'type' => 'text',
+    ));
+	
+
+		// Email
+		$wp_customize->add_setting('email_url', array(
+			'default' => '',
+			'sanitize_callback' => 'esc_url_raw',
+		));
+	
+		$wp_customize->add_control('email_url', array(
+			'label' => __('E-mail', 'theme'),
+			'section' => 'social_networks_section',
+			'type' => 'text',
+		));
+// Phone
+$wp_customize->add_setting('phone_url', array(
+    'default' => '',
+    'sanitize_callback' => 'sanitize_text_field',
+));
+
+$wp_customize->add_control('phone_url', array(
+    'label' => __('Phone', 'theme'),
+    'section' => 'social_networks_section',
+    'type' => 'text',
+));
+		
 }
 add_action('customize_register', 'mexclusive21_customizer_settings');

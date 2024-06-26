@@ -32,6 +32,14 @@
 							<li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
 							<li><a href="#" target="_blank"><i class="fab fa-dribbble"></i></a></li>
 							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+
+							<?php if (get_theme_mod('email_url')) : ?>
+							<li><a href=mailto:"<?php echo esc_url(get_theme_mod('email_url')); ?>"><i class="fab fa-mail"></i></a></li>
+							<?php endif; ?>
+
+							<?php if (get_theme_mod('phone_url')) : ?>
+    <li><a href="tel:<?php echo esc_attr(get_theme_mod('phone_url')); ?>"><i class="fab fa-phone"></i></a></li>
+<?php endif; ?>
 						</ul>
 					</div>
 				</div>
