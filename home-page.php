@@ -95,7 +95,7 @@ get_header(); ?>
                 </div>
             </section>
 	</div>
-</div>
+
 	<!-- end home page slider -->
 	<!-- features list section -->
 	<div class="list-section pt-80 pb-80">
