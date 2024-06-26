@@ -8,7 +8,7 @@
     $comment_count = count($comments);
     ?>
 
-    <h3 class="comment-count-title"><?php echo sprintf(esc_html__('%d %s', 'text-domain'), $comment_count, _n('Comment', 'Comments', $comment_count, 'mexcluve21')); ?></h3>
+    <h3 class="comment-count-title"><?php echo sprintf(esc_html__('%d %s', 'mexclusive21'), $comment_count, _n('Comment', 'Comments', $comment_count, 'mexcluve21')); ?></h3>
 
     <div class="comment-list">
         <?php foreach ($comments as $comment) : ?>
@@ -22,7 +22,7 @@
                         // Display the parent comment's author if this is a reply
                         if ($comment->comment_parent) {
                             $parent_comment = get_comment($comment->comment_parent);
-                            echo esc_html__('Reply to', 'text-domain') . ': ' . esc_html($parent_comment->comment_author);
+                            echo esc_html__('Reply to', 'mexclusive21') . ': ' . esc_html($parent_comment->comment_author);
                         } else {
                             echo esc_html($comment->comment_author);
                         }
@@ -37,8 +37,8 @@
     </div>
 
     <div class="comment-template">
-        <h4><?php esc_html_e('Leave a comment', 'text-domain'); ?></h4>
-        <p><?php esc_html_e('If you have a comment, don\'t hesitate to send us your opinion.', 'text-domain'); ?></p>
+        <h4><?php esc_html_e('Leave a comment', 'mexclusive21'); ?></h4>
+        <p><?php esc_html_e('If you have a comment, don\'t hesitate to send us your opinion.', 'mexclusive21'); ?></p>
         <?php
         comment_form(array(
             'title_reply' => 'Reply to: %s',  
@@ -46,7 +46,7 @@
             'comment_notes_after' => '', // Remove any additional comments after the comment fields
             'class_form' => '', // Add a custom class to the comment form if needed
             'class_submit' => 'submit-btn', // Add a custom class to the submit button
-            'label_submit' => esc_html__('Submit', 'text-domain'), // Change the submit button label
+            'label_submit' => esc_html__('Submit', 'mexclusive21'), // Change the submit button label
             'fields' => array(
                 'author' => '<p><input type="text" placeholder="' . esc_attr__('Your Name', 'mexcluve21') . '" name="author" required></p>',
                 'email' => '<p><input type="email" placeholder="' . esc_attr__('Your Email', 'mexcluve21') . '" name="email" required></p>'
