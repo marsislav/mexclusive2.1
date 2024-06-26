@@ -16,6 +16,6 @@ echo '<ul class="nav nav-pills d-inline-flex text-center mb-4">';
 	}
 	echo '</ul>';
 } else {
-echo '<p>' . esc_html__('No tags found.', 'mexclusive2') . '</p>';
+echo '<p>' . esc_html__('No tags found.', 'mexclusive21') . '</p>';
 }
 }

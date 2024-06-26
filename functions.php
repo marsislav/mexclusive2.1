@@ -35,7 +35,7 @@ function custom_headings_color_customize_register($wp_customize) {
 
 	// Add control for h1 color
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'h1_color_control', array(
-		'label' => __('H1 Color', 'mexclusive2'),
+		'label' => __('H1 Color', 'mexclusive21'),
 		'section' => 'colors',
 		'settings' => 'h1_color_setting',
 	)));
@@ -48,7 +48,7 @@ function custom_headings_color_customize_register($wp_customize) {
 
 	// Add control for h2 color
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'h2_color_control', array(
-		'label' => __('H2 Color', 'mexclusive2'),
+		'label' => __('H2 Color', 'mexclusive21'),
 		'section' => 'colors',
 		'settings' => 'h2_color_setting',
 	)));
@@ -61,7 +61,7 @@ function custom_headings_color_customize_register($wp_customize) {
 
 	// Add control for h3 color
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'h3_color_control', array(
-		'label' => __('H3 Color', 'mexclusive2'),
+		'label' => __('H3 Color', 'mexclusive21'),
 		'section' => 'colors',
 		'settings' => 'h3_color_setting',
 	)));
@@ -74,7 +74,7 @@ function custom_headings_color_customize_register($wp_customize) {
 
 	// Add control for link color
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'link_color_control', array(
-		'label' => __('Link Color', 'mexclusive2'),
+		'label' => __('Link Color', 'mexclusive21'),
 		'section' => 'colors',
 		'settings' => 'link_color_setting',
 	)));
@@ -87,7 +87,7 @@ function custom_headings_color_customize_register($wp_customize) {
 
 	// Add control for paragraph color
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'primary_color_control', array(
-		'label' => __('Primary Color', 'mexclusive2'),
+		'label' => __('Primary Color', 'mexclusive21'),
 		'section' => 'colors',
 		'settings' => 'primary_color_setting',
 	)));

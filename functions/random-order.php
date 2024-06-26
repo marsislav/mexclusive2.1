@@ -3,7 +3,7 @@
 add_filter( 'woocommerce_catalog_orderby', 'custom_add_random_sorting_option' );
 
 function custom_add_random_sorting_option( $options ) {
-$options['random'] = __( 'Random', 'mexclusive2' );
+$options['random'] = __( 'Random', 'mexclusive21' );
 
 return $options;
 }

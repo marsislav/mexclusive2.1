@@ -23,7 +23,7 @@ function custom_meta_tags() {
         }
     } else {
         // For other pages, you can provide default keywords and description
-        $keywords = 'mExclusive2, WordPress, Theme, Responsive, Blog';
+        $keywords = 'mExclusive21, WordPress, Theme, Responsive, Blog';
         $description = 'Wordpress theme for news agency, shop  or just for personal blog';
     }
 

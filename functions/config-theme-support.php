@@ -14,7 +14,7 @@ add_theme_support( 'custom-logo', array(
 'flex-height' => true,
 'flex-width'  => true
 ) );
-add_image_size( 'mexclusive2-slider', 1920, 800, array( 'center', 'center' ) );
+add_image_size( 'mexclusive21-slider', 1920, 800, array( 'center', 'center' ) );
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'title-tag' );
 add_theme_support('customize-selective-refresh-widgets');

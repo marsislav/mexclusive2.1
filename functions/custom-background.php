@@ -16,4 +16,4 @@ $args = array(
 add_theme_support( 'custom-background', $args );
 }
 
-add_action( 'after_setup_theme', 'mexclusive2_custom_background_setup' );
+add_action( 'after_setup_theme', 'mexclusive21custom_background_setup' );

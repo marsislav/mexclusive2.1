@@ -4,7 +4,7 @@ function mexclusive2_sidebar_widgets() {
     register_sidebar( array(
         'id' => 'primary-sidebar',
         'name' => esc_html__( 'Primary Sidebar', 'mexclusive2' ),
-        'description' => esc_html__( 'This sidebar appears in the blog posts page.', 'mexclusive2' ),
+        'description' => esc_html__( 'This sidebar appears in the blog posts page.', 'mexclusive21' ),
         'before_widget' => '<section>',
         'after_widget' => '</section>',
         'before_title' => '<h5>',
@@ -20,8 +20,8 @@ $widget_theme = '';
 foreach ($columns as $i => $column) {
     register_sidebar( array(
         'id' => 'footer-sidebar-' . ($i + 1),
-        'name' => sprintf(esc_html__( 'Footer Widgets Column %s', 'mexclusive2' ), $i +1),
-        'description' => esc_html__( 'Footer widgets', 'mexclusive2' ),
+        'name' => sprintf(esc_html__( 'Footer Widgets Column %s', 'mexclusive21' ), $i +1),
+        'description' => esc_html__( 'Footer widgets', 'mexclusive21' ),
         'before_widget' => '<section id="%1$s" class="c-footer-widget ' . $widget_theme . ' %2$s">',
         'after_widget' => '</section>',
         'before_title' => '<h5>',
@@ -29,4 +29,4 @@ foreach ($columns as $i => $column) {
     ) );
 }
 
-add_action('widgets_init', 'mexclusive2_sidebar_widgets');
+add_action('widgets_init', 'mexclusive21_sidebar_widgets');
