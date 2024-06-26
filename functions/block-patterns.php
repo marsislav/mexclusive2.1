@@ -1,6 +1,6 @@
 <?php
 // Add support for block patterns
-function mexclusive2_add_block_patterns() {
+function mexclusive21_add_block_patterns() {
 	register_block_pattern(
 		'mexclusive21/custom-pattern-1',
 		array(

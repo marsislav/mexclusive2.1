@@ -1,6 +1,6 @@
 <?php
 // Add support for custom backgrounds
-function mexclusive2_custom_background_setup() {
+function mexclusive21_custom_background_setup() {
 $args = array(
 'default-color'          => 'ffffff',
 'default-image'          => '',
@@ -16,4 +16,4 @@ $args = array(
 add_theme_support( 'custom-background', $args );
 }
 
-add_action( 'after_setup_theme', 'mexclusive21custom_background_setup' );
+add_action( 'after_setup_theme', 'mexclusive21_custom_background_setup' );

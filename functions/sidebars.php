@@ -1,6 +1,6 @@
 <?php
 
-function mexclusive2_sidebar_widgets() {
+function mexclusive21_sidebar_widgets() {
     register_sidebar( array(
         'id' => 'primary-sidebar',
         'name' => esc_html__( 'Primary Sidebar', 'mexclusive2' ),
