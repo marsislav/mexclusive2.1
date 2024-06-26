@@ -25,7 +25,7 @@
 				<div class="row">
 					<div class="col-lg-8 offset-lg-2 text-center">
 						<div class="breadcrumb-text">
-							<p>Fresh adn Organic</p>
+							<p><?php echo esc_url( $_SERVER['REQUEST_URI'] ); ?></p>
 							<h1>404 - Not Found</h1>
 						</div>
 					</div>
